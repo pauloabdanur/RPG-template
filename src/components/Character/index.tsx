@@ -1,5 +1,5 @@
 import { CharacterSides } from '../../types/CharacterSides';
-import * as C from './styles';
+import { Container, NameBox } from './styles';
 
 type Props = {
   x: number;
@@ -18,13 +18,13 @@ export const Character = ({ x, y, side, name }: Props) => {
   };
 
   return (
-    <C.Container
+    <Container
       size={size}
       left={x * size}
       top={y * size}
       sidePos={sides[side] ?? 0}
     >
-      <C.NameBox>{name}</C.NameBox>
-    </C.Container>
+      <NameBox>{name}</NameBox>
+    </Container>
   );
 };
