@@ -1,5 +1,6 @@
 {
   "name": "rpg",
+  "homepage": "https://pauloabdanur.github.io/RPG-template/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

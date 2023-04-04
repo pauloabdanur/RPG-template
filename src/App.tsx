@@ -4,41 +4,30 @@ import { Character } from './components/Character';
 import { useCharacter } from './hooks/useCharacter';
 
 const App = () => {
-  const char = useCharacter('Paulin');
-  const char2 = useCharacter('Thalita');
+  const char = useCharacter('Thalita');
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
+    // eslint-disable-next-line
   }, []);
 
   const handleKeyDown = (e: KeyboardEvent) => {
     switch (e.code) {
-      case 'KeyW':
-        char.moveUp();
-        break;
-      case 'ArrowUp':
-        char2.moveUp();
-        break;
-
-      case 'KeyS':
-        char.moveDown();
-        break;
-      case 'ArrowDown':
-        char2.moveDown();
-        break;
-
       case 'KeyA':
+      case 'ArrowLeft':
         char.moveLeft();
         break;
-      case 'ArrowLeft':
-        char2.moveLeft();
+      case 'KeyW':
+      case 'ArrowUp':
+        char.moveUp();
         break;
-
       case 'KeyD':
+      case 'ArrowRight':
         char.moveRight();
         break;
-      case 'ArrowRight':
-        char2.moveRight();
+      case 'KeyS':
+      case 'ArrowDown':
+        char.moveDown();
         break;
     }
   };
@@ -47,12 +36,6 @@ const App = () => {
     <Container>
       <Map>
         <Character x={char.x} y={char.y} side={char.side} name={char.name} />
-        <Character
-          x={char2.x}
-          y={char2.y}
-          side={char2.side}
-          name={char2.name}
-        />
       </Map>
     </Container>
   );
