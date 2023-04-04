@@ -48,6 +48,7 @@ export const useCharacter = (propName: string) => {
 
   return {
     name,
+    setName,
     x: pos.x,
     y: pos.y,
     side,
